@@ -1,3 +1,6 @@
+/**
+ * common Tree item component
+ */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import TreeItem from '@material-ui/lab/TreeItem';
@@ -37,14 +40,13 @@ function TreeItemComponent(nodes) {
     </TreeItem>
   );
 
+  /**
+   * onCheckBoxChange when select ALL remove All functionality
+   * @param {*} e 
+   * @param {*} node_data 
+   */
   function onCheckBoxChange(e, node_data) {
     console.log('onCheckBoxChange ::', e.target.checked, node_data.id);
-    if (node_data.id === 'select_all') {
-      // let select_all_items = CommonFunctions.selectAll();
-      // console.log('onCheckBoxChange :: select_all_items', select_all_items);
-      // check_box_tree_data.children = select_all_items;
-      // dispatch(actions.setCheckBoxTreeData(check_box_tree_data));
-    }
     if (node_data.parent === '0') {
       let selected_item = _.find(check_box_children, { 'id': node_data.id });
       selected_item.checked = true;

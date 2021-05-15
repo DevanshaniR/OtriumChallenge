@@ -1,3 +1,6 @@
+/**
+ * check box tree main view
+ */
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import TreeComponent from '../Components/TreeComponent';
@@ -12,7 +15,7 @@ function CheckBoxTreeView() {
 
   useEffect(() => {
     dispatch(actions.setCheckBoxTreeData(CheckBoxTreeData));
-  }, [dispatch]);
+  }, [dispatch, CheckBoxTreeData]);
 
 
   return (
